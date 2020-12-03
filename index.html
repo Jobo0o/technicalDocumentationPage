@@ -1,6 +1,449 @@
 <!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script type="text/javascript" src="js/script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/364763874d.js" crossorigin="anonymous"></script>
+</head>
+
+<main id="main-doc">
+    <div id="navbar" class="navbar">
+        <button class="openSidenav" type="button" onclick="openNav()" c="closeNav()">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <div id="title">
+            <h1>JS Documentation</h1>
+        </div>
+        <div id="logo">
+            <svg class="logo" viewBox="132 217.9692 396 224.0615" width="5000" height="2829.059343434343" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none"><defs></defs><style>.aD6z1nYkhcolor {fill:#000000;fill-opacity:1;}.aIptOCySncolors-0 {fill:#000000;fill-opacity:1;}</style><g opacity="1" transform="rotate(0 270.6 217.9692)">
+                <svg width="118.8" height="136.8816" x="270.6" y="217.9692" version="1.1" preserveAspectRatio="none" viewBox="14.119999885559082 9.420000076293944 61.7599983215332 71.16000366210938">
+                  <g transform="matrix(1 0 0 1 0 0)" class="aIptOCySncolors-0"><title>Shape 022</title><path d="M45.13,9.42,14.25,27.1l-.13,35.58,30.75,17.9L75.75,62.9l.13-35.58Zm-29,52.11.12-33.27L45.12,11.73,73.87,28.47h0L45,45l-.12,33.27Z"></path></g>
+                </svg>
+                </g><g opacity="1" transform="rotate(0 132 395.255)">
+                <svg width="396" height="46.7757" x="132" y="395.255" version="1.1" preserveAspectRatio="none" viewBox="0.8 -29.6 252.96 29.880000000000003">
+                  <g transform="matrix(1 0 0 1 0 0)" class="aD6z1nYkhcolor"><path d="M12.32-22.84Q16.72-22.84 19.74-20.36Q22.76-17.88 23.56-13.48L23.56-13.48L14.16-13.48Q13.64-15.24 12.12-15.24L12.12-15.24Q11.04-15.24 10.42-14.24Q9.80-13.24 9.80-11.28L9.80-11.28Q9.80-9.32 10.42-8.32Q11.04-7.32 12.12-7.32L12.12-7.32Q13.64-7.32 14.16-9.08L14.16-9.08L23.56-9.08Q22.76-4.68 19.74-2.20Q16.72 0.28 12.32 0.28L12.32 0.28Q8.96 0.28 6.34-1.12Q3.72-2.52 2.26-5.14Q0.80-7.76 0.80-11.28L0.80-11.28Q0.80-14.80 2.26-17.42Q3.72-20.04 6.34-21.44Q8.96-22.84 12.32-22.84L12.32-22.84Z M35.24-18.40Q36.60-20.36 38.56-21.54Q40.52-22.72 42.64-22.72L42.64-22.72L42.64-13.24L40.12-13.24Q37.60-13.24 36.42-12.36Q35.24-11.48 35.24-9.24L35.24-9.24L35.24 0L26.36 0L26.36-22.56L35.24-22.56L35.24-18.40Z M55.76-22.84Q59.16-22.84 61.88-21.44Q64.60-20.04 66.14-17.42Q67.68-14.80 67.68-11.28L67.68-11.28Q67.68-7.76 66.14-5.14Q64.60-2.52 61.88-1.12Q59.16 0.28 55.76 0.28L55.76 0.28Q52.36 0.28 49.64-1.12Q46.92-2.52 45.38-5.14Q43.84-7.76 43.84-11.28L43.84-11.28Q43.84-14.80 45.38-17.42Q46.92-20.04 49.64-21.44Q52.36-22.84 55.76-22.84L55.76-22.84ZM55.76-15.16Q54.52-15.16 53.68-14.18Q52.84-13.20 52.84-11.28L52.84-11.28Q52.84-9.36 53.66-8.38Q54.48-7.40 55.76-7.40L55.76-7.40Q57-7.40 57.84-8.38Q58.68-9.36 58.68-11.28L58.68-11.28Q58.68-13.20 57.84-14.18Q57-15.16 55.76-15.16L55.76-15.16Z M79.36-22.84Q83.96-22.84 86.70-20.62Q89.44-18.40 90.16-14.76L90.16-14.76L81.88-14.76Q81.36-16.68 79.16-16.68L79.16-16.68Q77.92-16.68 77.92-15.72L77.92-15.72Q77.92-15.04 78.82-14.68Q79.72-14.32 81.68-13.92L81.68-13.92Q84.24-13.44 86.06-12.78Q87.88-12.12 89.20-10.64Q90.52-9.16 90.52-6.60L90.52-6.60Q90.52-4.60 89.40-3.04Q88.28-1.48 86.12-0.60Q83.96 0.28 81.04 0.28L81.04 0.28Q76.16 0.28 73.28-1.80Q70.40-3.88 69.72-7.80L69.72-7.80L78.24-7.80Q78.48-5.84 81-5.84L81-5.84Q82.36-5.84 82.36-6.80L82.36-6.80Q82.36-7.56 81.44-7.92Q80.52-8.28 78.48-8.64L78.48-8.64Q75.88-9.16 74.18-9.76Q72.48-10.36 71.20-11.80Q69.92-13.24 69.92-15.76L69.92-15.76Q69.92-17.80 71-19.40Q72.08-21 74.20-21.92Q76.32-22.84 79.36-22.84L79.36-22.84Z M102.52-22.84Q107.12-22.84 109.86-20.62Q112.60-18.40 113.32-14.76L113.32-14.76L105.04-14.76Q104.52-16.68 102.32-16.68L102.32-16.68Q101.08-16.68 101.08-15.72L101.08-15.72Q101.08-15.04 101.98-14.68Q102.88-14.32 104.84-13.92L104.84-13.92Q107.40-13.44 109.22-12.78Q111.04-12.12 112.36-10.64Q113.68-9.16 113.68-6.60L113.68-6.60Q113.68-4.60 112.56-3.04Q111.44-1.48 109.28-0.60Q107.12 0.28 104.20 0.28L104.20 0.28Q99.32 0.28 96.44-1.80Q93.56-3.88 92.88-7.80L92.88-7.80L101.40-7.80Q101.64-5.84 104.16-5.84L104.16-5.84Q105.52-5.84 105.52-6.80L105.52-6.80Q105.52-7.56 104.60-7.92Q103.68-8.28 101.64-8.64L101.64-8.64Q99.04-9.16 97.34-9.76Q95.64-10.36 94.36-11.80Q93.08-13.24 93.08-15.76L93.08-15.76Q93.08-17.80 94.16-19.40Q95.24-21 97.36-21.92Q99.48-22.84 102.52-22.84L102.52-22.84Z M131.88-22.84Q134.52-22.84 136.64-21.46Q138.76-20.08 139.98-17.46Q141.20-14.84 141.20-11.28L141.20-11.28Q141.20-7.72 139.98-5.10Q138.76-2.48 136.64-1.10Q134.52 0.28 131.88 0.28L131.88 0.28Q129.68 0.28 128.10-0.62Q126.52-1.52 125.68-3.08L125.68-3.08L125.68 0L116.80 0L116.80-29.60L125.68-29.60L125.68-19.48Q126.52-21.04 128.10-21.94Q129.68-22.84 131.88-22.84L131.88-22.84ZM128.92-15.08Q127.48-15.08 126.56-14.08Q125.64-13.08 125.64-11.28L125.64-11.28Q125.64-9.48 126.56-8.48Q127.48-7.48 128.92-7.48L128.92-7.48Q130.36-7.48 131.28-8.48Q132.20-9.48 132.20-11.28L132.20-11.28Q132.20-13.08 131.28-14.08Q130.36-15.08 128.92-15.08L128.92-15.08Z M144-29.60L152.88-29.60L152.88 0L144 0L144-29.60Z M167.60-22.84Q171-22.84 173.72-21.44Q176.44-20.04 177.98-17.42Q179.52-14.80 179.52-11.28L179.52-11.28Q179.52-7.76 177.98-5.14Q176.44-2.52 173.72-1.12Q171 0.28 167.60 0.28L167.60 0.28Q164.20 0.28 161.48-1.12Q158.76-2.52 157.22-5.14Q155.68-7.76 155.68-11.28L155.68-11.28Q155.68-14.80 157.22-17.42Q158.76-20.04 161.48-21.44Q164.20-22.84 167.60-22.84L167.60-22.84ZM167.60-15.16Q166.36-15.16 165.52-14.18Q164.68-13.20 164.68-11.28L164.68-11.28Q164.68-9.36 165.50-8.38Q166.32-7.40 167.60-7.40L167.60-7.40Q168.84-7.40 169.68-8.38Q170.52-9.36 170.52-11.28L170.52-11.28Q170.52-13.20 169.68-14.18Q168.84-15.16 167.60-15.16L167.60-15.16Z M192.64-22.84Q197.04-22.84 200.06-20.36Q203.08-17.88 203.88-13.48L203.88-13.48L194.48-13.48Q193.96-15.24 192.44-15.24L192.44-15.24Q191.36-15.24 190.74-14.24Q190.12-13.24 190.12-11.28L190.12-11.28Q190.12-9.32 190.74-8.32Q191.36-7.32 192.44-7.32L192.44-7.32Q193.96-7.32 194.48-9.08L194.48-9.08L203.88-9.08Q203.08-4.68 200.06-2.20Q197.04 0.28 192.64 0.28L192.64 0.28Q189.28 0.28 186.66-1.12Q184.04-2.52 182.58-5.14Q181.12-7.76 181.12-11.28L181.12-11.28Q181.12-14.80 182.58-17.42Q184.04-20.04 186.66-21.44Q189.28-22.84 192.64-22.84L192.64-22.84Z M231.72 0L221.12 0L215.56-9L215.56 0L206.68 0L206.68-29.60L215.56-29.60L215.56-14.12L221.20-22.56L231.52-22.56L223.08-11.20L231.72 0Z M242.60-22.84Q247.20-22.84 249.94-20.62Q252.68-18.40 253.40-14.76L253.40-14.76L245.12-14.76Q244.60-16.68 242.40-16.68L242.40-16.68Q241.16-16.68 241.16-15.72L241.16-15.72Q241.16-15.04 242.06-14.68Q242.96-14.32 244.92-13.92L244.92-13.92Q247.48-13.44 249.30-12.78Q251.12-12.12 252.44-10.64Q253.76-9.16 253.76-6.60L253.76-6.60Q253.76-4.60 252.64-3.04Q251.52-1.48 249.36-0.60Q247.20 0.28 244.28 0.28L244.28 0.28Q239.40 0.28 236.52-1.80Q233.64-3.88 232.96-7.80L232.96-7.80L241.48-7.80Q241.72-5.84 244.24-5.84L244.24-5.84Q245.60-5.84 245.60-6.80L245.60-6.80Q245.60-7.56 244.68-7.92Q243.76-8.28 241.72-8.64L241.72-8.64Q239.12-9.16 237.42-9.76Q235.72-10.36 234.44-11.80Q233.16-13.24 233.16-15.76L233.16-15.76Q233.16-17.80 234.24-19.40Q235.32-21 237.44-21.92Q239.56-22.84 242.60-22.84L242.60-22.84Z"/></g>
+                </svg>
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#Introduction">Introduction</a>
+        <a href="#What_you_should_already_know">Already known</a>
+        <a href="#JavaScript_and_Java">JavaScript & Java</a>
+        <a href="#Hello_world">Hello World</a>
+        <a href="#Variables">Variables</a>
+        <a href="#Declaring_variables">Declaring variables</a>
+        <a href="#Variable_scope">Variable scope</a>
+        <a href="#Global_variables">Global variables</a>
+        <a href="#Constants">Constants</a>
+        <a href="#Data_types">Data types</a>
+        <a href="#if...else_statement">if...else statements</a>
+        <a href="#while_statement">while statement</a>
+        <a href="#Function_declarations">Function declarations</a>
+        <a href="#Reference">Reference</a>
+    </div>
 
 
-<div id="main-page">
+    <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <article>
+          <p>
+            JavaScript is a cross-platform, object-oriented scripting language. It
+            is a small and lightweight language. Inside a host environment (for
+            example, a web browser), JavaScript can be connected to the objects of
+            its environment to provide programmatic control over them.
+          </p>
     
-</div>
+          <p>
+            JavaScript contains a standard library of objects, such as Array, Date,
+            and Math, and a core set of language elements such as operators, control
+            structures, and statements. Core JavaScript can be extended for a
+            variety of purposes by supplementing it with additional objects; for
+            example:
+          </p>
+          <ul>
+            <li>
+              Client-side JavaScript extends the core language by supplying objects
+              to control a browser and its Document Object Model (DOM). For example,
+              client-side extensions allow an application to place elements on an
+              HTML form and respond to user events such as mouse clicks, form input,
+              and page navigation.
+            </li>
+            <li>
+              Server-side JavaScript extends the core language by supplying objects
+              relevant to running JavaScript on a server. For example, server-side
+              extensions allow an application to communicate with a database,
+              provide continuity of information from one invocation to another of
+              the application, or perform file manipulations on a server.
+            </li>
+          </ul>
+        </article>
+      </section>
+      <section class="main-section" id="What_you_should_already_know">
+        <header>What you should already know</header>
+        <article>
+          <p>This guide assumes you have the following basic background:</p>
+    
+          <ul>
+            <li>
+              A general understanding of the Internet and the World Wide Web (WWW).
+            </li>
+            <li>Good working knowledge of HyperText Markup Language (HTML).</li>
+            <li>
+              Some programming experience. If you are new to programming, try one of
+              the tutorials linked on the main page about JavaScript.
+            </li>
+          </ul>
+        </article>
+      </section>
+      <section class="main-section" id="JavaScript_and_Java">
+        <header>JavaScript and Java</header>
+        <article>
+          <p>
+            JavaScript and Java are similar in some ways but fundamentally different
+            in some others. The JavaScript language resembles Java but does not have
+            Java's static typing and strong type checking. JavaScript follows most
+            Java expression syntax, naming conventions and basic control-flow
+            constructs which was the reason why it was renamed from LiveScript to
+            JavaScript.
+          </p>
+    
+          <p>
+            In contrast to Java's compile-time system of classes built by
+            declarations, JavaScript supports a runtime system based on a small
+            number of data types representing numeric, Boolean, and string values.
+            JavaScript has a prototype-based object model instead of the more common
+            class-based object model. The prototype-based model provides dynamic
+            inheritance; that is, what is inherited can vary for individual objects.
+            JavaScript also supports functions without any special declarative
+            requirements. Functions can be properties of objects, executing as
+            loosely typed methods.
+          </p>
+          <p>
+            JavaScript is a very free-form language compared to Java. You do not
+            have to declare all variables, classes, and methods. You do not have to
+            be concerned with whether methods are public, private, or protected, and
+            you do not have to implement interfaces. Variables, parameters, and
+            function return types are not explicitly typed.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="Hello_world">
+        <header>Hello world</header>
+        <article>
+          To get started with writing JavaScript, open the Scratchpad and write your
+          first "Hello world" JavaScript code:
+          <code
+            >function greetMe(yourName) { alert("Hello " + yourName); }
+            greetMe("World");
+          </code>
+    
+          Select the code in the pad and hit Ctrl+R to watch it unfold in your
+          browser!
+        </article>
+      </section>
+      <section class="main-section" id="Variables">
+        <header>Variables</header>
+        <p>
+          You use variables as symbolic names for values in your application. The
+          names of variables, called identifiers, conform to certain rules.
+        </p>
+        <p>
+          A JavaScript identifier must start with a letter, underscore (_), or
+          dollar sign ($); subsequent characters can also be digits (0-9). Because
+          JavaScript is case sensitive, letters include the characters "A" through
+          "Z" (uppercase) and the characters "a" through "z" (lowercase).
+        </p>
+        <p>
+          You can use ISO 8859-1 or Unicode letters such as å and ü in identifiers.
+          You can also use the Unicode escape sequences as characters in
+          identifiers. Some examples of legal names are Number_hits, temp99, and
+          _name.
+        </p>
+      </section>
+      <section class="main-section" id="Declaring_variables">
+        <header>Declaring variables</header>
+        <article>
+          You can declare a variable in three ways:
+          <p>
+            With the keyword var. For example, <code>var x = 42.</code> This syntax
+            can be used to declare both local and global variables.
+          </p>
+          <p>
+            By simply assigning it a value. For example, <code>x = 42.</code> This
+            always declares a global variable. It generates a strict JavaScript
+            warning. You shouldn't use this variant.
+          </p>
+          <p>
+            With the keyword let. For example,<code> let y = 13.</code> This syntax
+            can be used to declare a block scope local variable. See Variable scope
+            below.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="Variable_scope">
+        <header>Variable scope</header>
+        <article>
+          <p>
+            When you declare a variable outside of any function, it is called a
+            global variable, because it is available to any other code in the
+            current document. When you declare a variable within a function, it is
+            called a local variable, because it is available only within that
+            function.
+          </p>
+    
+          <p>
+            JavaScript before ECMAScript 2015 does not have block statement scope;
+            rather, a variable declared within a block is local to the function (or
+            global scope) that the block resides within. For example the following
+            code will log 5, because the scope of x is the function (or global
+            context) within which x is declared, not the block, which in this case
+            is an if statement.
+          </p>
+          <code>if (true) { var x = 5; } console.log(x); // 5</code>
+          <p>
+            This behavior changes, when using the let declaration introduced in
+            ECMAScript 2015.
+          </p>
+    
+          <code
+            >if (true) { let y = 5; } console.log(y); // ReferenceError: y is not
+            defined</code
+          >
+        </article>
+      </section>
+      <section class="main-section" id="Global_variables">
+        <header>Global variables</header>
+        <article>
+          <p>
+            Global variables are in fact properties of the global object. In web
+            pages the global object is window, so you can set and access global
+            variables using the window.variable syntax.
+          </p>
+    
+          <p>
+            Consequently, you can access global variables declared in one window or
+            frame from another window or frame by specifying the window or frame
+            name. For example, if a variable called phoneNumber is declared in a
+            document, you can refer to this variable from an iframe as
+            parent.phoneNumber.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="Constants">
+        <header>Constants</header>
+        <article>
+          <p>
+            You can create a read-only, named constant with the const keyword. The
+            syntax of a constant identifier is the same as for a variable
+            identifier: it must start with a letter, underscore or dollar sign and
+            can contain alphabetic, numeric, or underscore characters.
+          </p>
+    
+          <code>const PI = 3.14;</code>
+          <p>
+            A constant cannot change value through assignment or be re-declared
+            while the script is running. It has to be initialized to a value.
+          </p>
+    
+          <p>
+            The scope rules for constants are the same as those for let block scope
+            variables. If the const keyword is omitted, the identifier is assumed to
+            represent a variable.
+          </p>
+    
+          <p>
+            You cannot declare a constant with the same name as a function or
+            variable in the same scope. For example:
+          </p>
+    
+          <code
+            >// THIS WILL CAUSE AN ERROR function f() {}; const f = 5; // THIS WILL
+            CAUSE AN ERROR ALSO function f() { const g = 5; var g; //statements
+            }</code
+          >
+          However, object attributes are not protected, so the following statement
+          is executed without problems.
+          <code
+            >const MY_OBJECT = {"key": "value"}; MY_OBJECT.key = "otherValue";</code
+          >
+        </article>
+      </section>
+      <section class="main-section" id="Data_types">
+        <header>Data types</header>
+        <article>
+          <p>The latest ECMAScript standard defines seven data types:</p>
+          <ul>
+            <li>
+              <p>Six data types that are primitives:</p>
+              <ul>
+                <li>Boolean. true and false.</li>
+                <li>
+                  null. A special keyword denoting a null value. Because JavaScript
+                  is case-sensitive, null is not the same as Null, NULL, or any
+                  other variant.
+                </li>
+                <li>undefined. A top-level property whose value is undefined.</li>
+                <li>Number. 42 or 3.14159.</li>
+                <li>String. "Howdy"</li>
+                <li>
+                  Symbol (new in ECMAScript 2015). A data type whose instances are
+                  unique and immutable.
+                </li>
+              </ul>
+            </li>
+    
+            <li>and Object</li>
+          </ul>
+          Although these data types are a relatively small amount, they enable you
+          to perform useful functions with your applications. Objects and functions
+          are the other fundamental elements in the language. You can think of
+          objects as named containers for values, and functions as procedures that
+          your application can perform.
+        </article>
+      </section>
+      <section class="main-section" id="if...else_statement">
+        <header>if...else statement</header>
+        <article>
+          Use the if statement to execute a statement if a logical condition is
+          true. Use the optional else clause to execute a statement if the condition
+          is false. An if statement looks as follows:
+    
+          <code>if (condition) { statement_1; } else { statement_2; }</code>
+          condition can be any expression that evaluates to true or false. See
+          Boolean for an explanation of what evaluates to true and false. If
+          condition evaluates to true, statement_1 is executed; otherwise,
+          statement_2 is executed. statement_1 and statement_2 can be any statement,
+          including further nested if statements.
+          <p>
+            You may also compound the statements using else if to have multiple
+            conditions tested in sequence, as follows:
+          </p>
+          <code
+            >if (condition_1) { statement_1; } else if (condition_2) { statement_2;
+            } else if (condition_n) { statement_n; } else { statement_last; }
+          </code>
+          In the case of multiple conditions only the first logical condition which
+          evaluates to true will be executed. To execute multiple statements, group
+          them within a block statement ({ ... }) . In general, it's good practice
+          to always use block statements, especially when nesting if statements:
+    
+          <code
+            >if (condition) { statement_1_runs_if_condition_is_true;
+            statement_2_runs_if_condition_is_true; } else {
+            statement_3_runs_if_condition_is_false;
+            statement_4_runs_if_condition_is_false; }</code
+          >
+          It is advisable to not use simple assignments in a conditional expression,
+          because the assignment can be confused with equality when glancing over
+          the code. For example, do not use the following code:
+          <code>if (x = y) { /* statements here */ }</code> If you need to use an
+          assignment in a conditional expression, a common practice is to put
+          additional parentheses around the assignment. For example:
+    
+          <code>if ((x = y)) { /* statements here */ }</code>
+        </article>
+      </section>
+      <section class="main-section" id="while_statement">
+        <header>while statement</header>
+        <article>
+          A while statement executes its statements as long as a specified condition
+          evaluates to true. A while statement looks as follows:
+    
+          <code>while (condition) statement</code> If the condition becomes false,
+          statement within the loop stops executing and control passes to the
+          statement following the loop.
+    
+          <p>
+            The condition test occurs before statement in the loop is executed. If
+            the condition returns true, statement is executed and the condition is
+            tested again. If the condition returns false, execution stops and
+            control is passed to the statement following while.
+          </p>
+    
+          <p>
+            To execute multiple statements, use a block statement ({ ... }) to group
+            those statements.
+          </p>
+    
+          Example:
+    
+          <p>The following while loop iterates as long as n is less than three:</p>
+    
+          <code>var n = 0; var x = 0; while (n &lt; 3) { n++; x += n; }</code>
+          <p>
+            With each iteration, the loop increments n and adds that value to x.
+            Therefore, x and n take on the following values:
+          </p>
+    
+          <ul>
+            <li>After the first pass: n = 1 and x = 1</li>
+            <li>After the second pass: n = 2 and x = 3</li>
+            <li>After the third pass: n = 3 and x = 6</li>
+          </ul>
+          <p>
+            After completing the third pass, the condition n &lt; 3 is no longer
+            true, so the loop terminates.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="Function_declarations">
+        <header>Function declarations</header>
+        <article>
+          A function definition (also called a function declaration, or function
+          statement) consists of the function keyword, followed by:
+    
+          <ul>
+            <li>The name of the function.</li>
+            <li>
+              A list of arguments to the function, enclosed in parentheses and
+              separated by commas.
+            </li>
+            <li>
+              The JavaScript statements that define the function, enclosed in curly
+              brackets, { }.
+            </li>
+          </ul>
+          <p>
+            For example, the following code defines a simple function named square:
+          </p>
+    
+          <code>function square(number) { return number * number; }</code>
+          <p>
+            The function square takes one argument, called number. The function
+            consists of one statement that says to return the argument of the
+            function (that is, number) multiplied by itself. The return statement
+            specifies the value returned by the function.
+          </p>
+          <code>return number * number;</code>
+          <p>
+            Primitive parameters (such as a number) are passed to functions by
+            value; the value is passed to the function, but if the function changes
+            the value of the parameter, this change is not reflected globally or in
+            the calling function.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="Reference">
+        <header>Reference</header>
+        <article>
+          <ul>
+            <li>
+              All the documentation in this page is taken from
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+                target="_blank"
+                >MDN</a
+              >
+            </li>
+          </ul>
+        </article>
+      </section>
+-->    
+</main>

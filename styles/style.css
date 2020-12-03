@@ -1,0 +1,152 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;900&display=swap');
+
+/* global variables */
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    background-color: #c4c4c4;
+}
+li {
+  list-style: none;
+}
+#main-doc {
+  position: absolute;
+  margin-right: 200px;
+  padding: 35px;
+  margin-bottom: 100px;
+}
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 19px;
+    color: #b1b0b0;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color: whitesmoke;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main-doc {
+    transition: margin-left .5s;
+    padding: 20px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+/* ============================================================================ */
+
+/* styling header & navbar*/
+.navbar {
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+}
+.openSidenav {
+  margin: 10px;
+  border: none;
+  background-color: white;
+  outline: none;
+}
+.openSidenav:hover {
+  color: whitesmoke;
+  transition: .3s;
+  cursor: pointer;
+}
+.fas.fa-bars {
+  font-size: 30px;
+  border: none;
+  background-color: #c4c4c4;
+}
+.logo {
+  width: 200px;
+  height: auto;
+}
+#logo {
+  position: fixed;
+  top: 5px;
+  right: 45%;
+  margin-bottom: 10px;
+}
+}
+h1 {
+    font-size: 35px;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+.sticky + .content {
+  padding-top: 102px;
+}
+
+/* text styling */
+
+header {
+  color: black;
+  margin: 0px;
+  font-size: 1.8em;
+  font-weight: thin;
+  text-align: left;
+}
+
+section article {
+  color: black;
+  margin: 15px;
+  font-size: 19px;
+}
+section li {
+  margin: 15px 0px 0px 20px;
+  list-style: circle;
+}
+code {
+  display: block;
+  text-align: left;
+  white-space: pre-line;
+  position: relative;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 2;
+  background-color: #f7f7f7;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 5px;
+}
