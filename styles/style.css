@@ -15,7 +15,6 @@ li {
   list-style: none;
 }
 #main-doc {
-  position: absolute;
   margin-right: 200px;
   padding: 35px;
   margin-bottom: 100px;
@@ -76,7 +75,7 @@ li {
 /* styling header & navbar*/
 #navbar {
     display: flex;
-    position: relative;
+    position: sticky;
     align-items: center;
     margin-bottom: 20px;
 }
